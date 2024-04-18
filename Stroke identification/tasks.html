@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+  <div class="maindiv">
+    <div class="tasks" id="task1">
+      <h1>Task 1</h1>
+      <h4>Identify the shape mentioned:</h4>
+      <div>
+        <p>Find the shape 'Square' from the given options:</p>
+        <div class="container text-center">
+          <div class="row row-cols-2 row-gap-3">
+            <div class="col"><a href="#task2" id="q1option1" onclick="QuestionValidate(1,0)"><img class="optionsimage"
+                  src="https://pixfeeds.com/images/41/605016/1280-circle.png" alt="Circle"></a></div>
+            <div class="col"><a href="#task2" id="q1option2" onclick="QuestionValidate(1,0)"><img class="optionsimage"
+                  src="https://rukminim1.flixcart.com/image/300/300/l2c753k0/puzzle/y/3/n/1-montessori-single-shape-traingle-puzzle-tantrums-original-imagdpn6xnfhb2fv.jpeg"
+                  alt="Triangle"></a></div>
+            <div class="col"><a href="#task2" id="q1option3" onclick="QuestionValidate(1,1)"><img class="optionsimage"
+                  src="https://www.clipartmax.com/png/middle/118-1180008_red-square-clip-art-f9ylxu-clipart-square-red.png"
+                  alt="Square"></a></div>
+            <div class="col"><a href="#task2" id="q1option4" onclick="QuestionValidate(1,0)"><img class="optionsimage"
+                  src="https://img.buzzfeed.com/buzzfeed-static/static/2020-07/16/18/enhanced/82116d0c5e0c/enhanced-2282-1594924955-23.jpg?output-format=jpg&output-quality=auto"
+                  alt="Rectangle"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="task2">
+      <h1>Task 2</h1>
+      <h4>Identify the correct number sequence:</h4>
+      <div>
+        <p>Find the number sequence that is ordered in ascending order:</p>
+        <div class="container text-center">
+          <div class="row row-cols-2 row-gap-3">
+            <div class="col"><a href="#task3" id="q1option1" onclick="QuestionValidate(2,0)"><img class="optionsimage"
+                  src="./Assets/task 2-1.png" alt="Circle"></a></div>
+            <div class="col"><a href="#task3" id="q1option2" onclick="QuestionValidate(2,0)"><img class="optionsimage"
+                  src="./Assets/task 2-2.png"
+                  alt="Triangle"></a></div>
+            <div class="col"><a href="#task3" id="q1option3" onclick="QuestionValidate(2,1)"><img class="optionsimage"
+                  src="./Assets/task 2-3.png"
+                  alt="Square"></a></div>
+            <div class="col"><a href="#task3" id="q1option4" onclick="QuestionValidate(2,0)"><img class="optionsimage"
+                  src="./Assets/task 2-4.png"
+                  alt="Rectangle"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="task3">
+      <h1>Task 3</h1>
+      <h4>Identify the correct fruit:</h4>
+      <div>
+        <p>Find the fruit 'Mango' from the given options:</p>
+        <div class="container text-center">
+          <div class="row row-cols-2 row-gap-3">
+            <div class="col"><a href="#task4" id="q1option1" onclick="QuestionValidate(3,1)"><img class="optionsimage"
+                  src="./Assets/mango.jpg" alt="Circle"></a></div>
+            <div class="col"><a href="#task4" id="q1option2" onclick="QuestionValidate(3,0)"><img class="optionsimage"
+                  src="./Assets/apple.jpg"
+                  alt="Triangle"></a></div>
+            <div class="col"><a href="#task4" id="q1option3" onclick="QuestionValidate(3,0)"><img class="optionsimage"
+                  src="./Assets/watermelon.webp"
+                  alt="Square"></a></div>
+            <div class="col"><a href="#task4" id="q1option4" onclick="QuestionValidate(3,0)"><img class="optionsimage"
+                  src="./Assets/banana.jpg"
+                  alt="Rectangle"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- Task 4: Addition Problem -->
+    <div class="container">
+        <h2>Task 4: Addition Problem</h2>
+        <p>Solve the following addition problem:</p>
+        <p><strong>3 + 5 = ?</strong></p>
+        <form id="additionForm">
+            <label class="option">
+                <input type="radio" name="answer" value="6" onchange="submitAnswer('6')">
+                6
+            </label>
+            <label class="option">
+                <input type="radio" name="answer" value="7" onchange="submitAnswer('7')">
+                7
+            </label>
+            <label class="option">
+                <input type="radio" name="answer" value="8" onchange="submitAnswer('8')">
+                8
+            </label>
+            <label class="option">
+                <input type="radio" name="answer" value="9" onchange="submitAnswer('9')">
+                9
+            </label>
+        </form>
+        <p id="resultMessage" style="margin-top: 20px;"></p>
+    </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5: Word Scramble</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Task 5: Word Scramble</h2>
+        <p>Unscramble the letters to form a word:</p>
+        <p class="scrambled-word" id="scrambledWord">RUTLSE</p>
+        <input type="text" id="userInputWord" placeholder="Enter your answer">
+        <button onclick="checkWord()">Check Answer</button>
+        <p id="resultWord" style="margin-top: 20px;"></p>
+    </div>
+
+    <script>
+        function checkWord() {
+            const userInput = document.getElementById('userInputWord').value.trim().toUpperCase();
+            const scrambledWord = document.getElementById('scrambledWord').textContent.trim();
+            const resultDisplay = document.getElementById('resultWord');
+
+            const correctWord = 'RESULT'; // The correct unscrambled word
+
+            if (userInput === correctWord) {
+                resultDisplay.textContent = 'Correct! Well done.';
+                resultDisplay.style.color = 'green';
+            } else {
+                resultDisplay.textContent = 'Incorrect. Try again.';
+                resultDisplay.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6: Sentence Completion</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Task 6: Sentence Completion</h2>
+        <p>Complete the following sentence:</p>
+        <p><strong>"The best way to learn a new language is to..."</strong></p>
+        <form id="sentenceForm">
+            <label><input type="radio" name="completionOption" value="practice consistently and immerse yourself in the language environment."> Practice consistently and immerse yourself in the language environment.</label><br>
+            <label><input type="radio" name="completionOption" value="take a vacation."> Take a vacation.</label><br>
+            <label><input type="radio" name="completionOption" value="read one book."> Read one book.</label><br>
+            <button type="button" onclick="submitCompletion()">Finish</button>
+        </form>
+        <p id="resultMessage" style="margin-top: 20px;"></p>
+        <p id="correctAnswer" style="display: none;"></p>
+    </div>
+
+    <script>
+        function submitCompletion() {
+            const selectedOption = document.querySelector('input[name="completionOption"]:checked');
+            const resultMessage = document.getElementById('resultMessage');
+            const correctAnswer = "practice consistently and immerse yourself in the language environment.";
+
+            if (!selectedOption) {
+                alert("Please select an option.");
+                return;
+            }
+
+            const userInput = selectedOption.value;
+
+            if (userInput === correctAnswer) {
+                resultMessage.textContent = "Correct! Well done.";
+                resultMessage.style.color = "green";
+            } else {
+                resultMessage.textContent = "Incorrect. Try again.";
+                resultMessage.style.color = "red";
+                document.getElementById('correctAnswer').textContent = "The correct answer is: " + correctAnswer;
+                document.getElementById('correctAnswer').style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7: Letter Writing</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Task 7: Letter Writing</h2>
+        <p>Write a short letter or message based on the topic below:</p>
+        <p><strong>Topic:</strong> Thank You Note</p>
+        <textarea id="letterContent" placeholder="Write your letter here..." style="width: 100%; height: 200px;"></textarea>
+        <button onclick="submitLetter()">Submit Letter</button>
+        <p id="feedback" style="font-weight: bold; margin-top: 10px;"></p>
+    </div>
+
+    <script>
+        function submitLetter() {
+            const letterContent = document.getElementById('letterContent').value.trim();
+            const feedbackDisplay = document.getElementById('feedback');
+
+            if (letterContent === '') {
+                feedbackDisplay.textContent = 'Please write your letter before submitting.';
+                feedbackDisplay.style.color = 'red';
+            } else {
+                const wordCount = letterContent.split(/\s+/).length;
+
+                if (wordCount >= 10) {
+                    feedbackDisplay.textContent = 'Well done! Your letter meets the length requirement.';
+                    feedbackDisplay.style.color = 'green';
+                } else {
+                    feedbackDisplay.textContent = 'Your letter is too short. Please add more content.';
+                    feedbackDisplay.style.color = 'red';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8: Stroke Rehab Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding-top: 50px;
+        }
+        #game-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            border: 2px solid #ccc;
+            height: 400px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .object {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        #score {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #submit-container {
+            display: none;
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 80%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task 8: Stroke Rehab Game</h1>
+    <div id="game-container">
+        <!-- Objects will be dynamically added here -->
+    </div>
+    <p id="score">Score: <span id="score-value">0</span></p>
+
+    <div id="submit-container">
+        <p>Great job! Submit your score:</p>
+        <form id="submissionForm" onsubmit="submitScore(event)">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <input type="hidden" id="finalScore">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="submissionMessage"></p>
+    </div>
+
+    <script>
+        let score = 0;
+        const gameContainer = document.getElementById('game-container');
+        const submitContainer = document.getElementById('submit-container');
+        const finalScoreInput = document.getElementById('finalScore');
+
+        function createRandomObject() {
+            const object = document.createElement('div');
+            object.className = 'object';
+            object.style.left = `${Math.random() * (gameContainer.clientWidth - 50)}px`;
+            object.style.top = `${Math.random() * (gameContainer.clientHeight - 50)}px`;
+            gameContainer.appendChild(object);
+
+            object.addEventListener('click', () => {
+                score++;
+                document.getElementById('score-value').textContent = score;
+                gameContainer.removeChild(object);
+            });
+
+            setTimeout(() => {
+                gameContainer.removeChild(object);
+                checkGameCompletion();
+            }, 30000); // Game duration: 30 seconds
+        }
+
+        setInterval(createRandomObject, 2000); // Create new object every 2 seconds
+
+        function checkGameCompletion() {
+            submitContainer.style.display = 'block';
+            finalScoreInput.value = score;
+        }
+
+        function submitScore(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const finalScore = finalScoreInput.value;
+
+            // Perform score submission logic (e.g., AJAX request to server)
+            // For demonstration, display a success message
+            const submissionMessage = document.getElementById('submissionMessage');
+            submissionMessage.textContent = `Score ${finalScore} submitted successfully for ${name} (${email}).`;
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9: Word Association</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        #responseInput {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #correctAnswer {
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task 9: Word Association</h1>
+        <p>Listen to the word and respond with a related word or concept:</p>
+        
+        <!-- Audio element for playing the word -->
+        <audio id="wordAudio" controls>
+            <source src="tree_audio.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Input for user's response -->
+        <input type="text" id="responseInput" placeholder="Enter your response">
+
+        <!-- Button to check the response -->
+        <button onclick="checkResponse()">Submit Response</button>
+
+        <!-- Display area for result -->
+        <p id="result"></p>
+
+        <!-- Display area for correct answer -->
+        <p id="correctAnswer" style="font-weight: bold; margin-top: 10px; display: none;"></p>
+
+        <script>
+            function checkResponse() {
+                const response = document.getElementById('responseInput').value.trim().toLowerCase();
+                const expectedResponse = 'leaf'; // Expected response
+
+                const result = document.getElementById('result');
+                const correctAnswer = document.getElementById('correctAnswer');
+
+                if (response === expectedResponse) {
+                    result.textContent = 'Correct! Well done.';
+                    result.style.color = 'green';
+                    correctAnswer.textContent = 'Correct answer: ' + expectedResponse;
+                } else {
+                    result.textContent = 'Incorrect. Try again.';
+                    result.style.color = 'red';
+                    correctAnswer.textContent = 'Correct answer: ' + expectedResponse;
+                }
+
+                correctAnswer.style.display = 'block';
+            }
+        </script>
+    </div>
+</body>
+</html>
+ <div id="task10">
+      <h1>Task 10</h1>
+      <h4>Read the passage and answer the questions:</h4>
+      <div>
+        <p>choose the correct answer from the options given: <br>
+          At sun set Ram and Laxman come in a chariot with Vanar Sena. Ram shoots arrows at the effigies. The effigies
+          catch fire and burn to ashes. Fireworks and
+          crackers explode in the air. People in some areas of Rajasthan go to greet each other. Dussehra is a symbol of
+          victory of good over evil.</p>
+        <p>1.This passage is about-</p>
+        <div class="container text-center">
+          <div class="row row-cols-2 row-gap-3">
+            <ol type="a" class="row row-cols-2 row-gap-3">
+              <div class="col"><a href="#task10part2" onclick="QuestionValidate(10,0)">
+                  <li>chariot</li>
+                </a></div>
+              <div class="col"><a href="#task10part2" onclick="QuestionValidate(10,0)">
+                  <li>Vanar Sena</li>
+                </a></div>
+              <div class="col"><a href="#task10part2" onclick="QuestionValidate(10,0)">
+                  <li>effigies</li>
+                </a></div>
+              <div class="col"><a href="#task10part2" onclick="QuestionValidate(10,1)">
+                  <li>Dussehra</li>
+                </a></div>
+            </ol>
+          </div>
+        </div>
+        <div id="task10part2">
+          <p>2. Who shoots the effigies?</p>
+          <div class="container text-center">
+            <div class="row row-cols-2 row-gap-3">
+              <ol type="a" class="row row-cols-2 row-gap-3">
+                <div class="col"><a href="#submitcontent" onclick="QuestionValidate(10,1)">
+                    <li>Ram</li>
+                  </a></div>
+                <div class="col"><a href="#submitcontent" onclick="QuestionValidate(10,0)">
+                    <li>Vanar Sena</li>
+                  </a></div>
+                <div class="col"><a href="#submitcontent" onclick="QuestionValidate(10,0)">
+                    <li>Laxman</li>
+                  </a></div>
+                <div class="col"><a href="#submitcontent" onclick="QuestionValidate(10,0)">
+                    <li>Dussehra</li>
+                  </a></div>
+              </ol>
+            </div>
+          </div>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Details</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="redirectToEEG()">Submit Details</button>
+    </div>
+
+    <script>
+        function redirectToEEG() {
+            // Navigate to the 'eeg.html' page using a relative path
+            window.location.href = "eeg.html";
+        }
+    </script>
+</body>
+</html>
